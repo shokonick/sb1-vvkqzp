@@ -1,0 +1,13 @@
+{
+  "name": "channel-zero",
+  "version": "1.0.0",
+  "description": "Channel Zero TV Website",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

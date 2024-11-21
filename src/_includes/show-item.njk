@@ -1,0 +1,8 @@
+{% macro showItem(src, title, content, link="#") %}
+<div class="show">
+<img src="{{ src }}" alt="" width="150" height="100">
+    <h3>{{ title }}</h3>
+    <p>{{ content }}</p>
+    <p><a href="{{ link }}" class="watch-now">צפו עכשיו</a></p>
+</div>
+{% endmacro %}

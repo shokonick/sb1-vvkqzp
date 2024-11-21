@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דף הבית - ערוץ אפס</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+    <div id="logo"><img src="/assets/zerologo.png" width="80" height="44" alt="ערוץ אפס"/></div>
+    <div id="nav">
+        <a href="/">דף הבית</a>              
+        <a href="/shows">תוכניות</a>
+        <a href="/schedule">לוח שידורים</a>
+        <a href="/about">אודות</a>
+        <a href="/contact">צור קשר</a>
+    </div>
+    <div class="clear"></div>
+</div>
+        <div id="content">
+            
+<div id="ticker">
+    <h3>חדשות ועדכונים</h3>
+    <div id="ticker-content"></div>
+</div>
+
+<div id="sidebar">
+    <h2>תוכניות קרובות</h2>
+    <ul>
+        <li>מרגלי סייבר - 20:00</li>
+        <li>בית המשפט הלילי - 20:30</li>
+        <li>תעלומות אפלות - 21:00</li>
+        <li>תוכנית הלילה - 22:00</li>
+    </ul>
+    
+    <h2>סקר</h2>
+    <form method="post" action="#" class="poll-form">
+    <p>מהו הז'אנר האהוב עליכם?</p>
+    <input type="radio" name="genre" id="drama" value="drama">
+    <label for="drama">דרמה</label><br>
+    
+    <input type="radio" name="genre" id="comedy" value="comedy">
+    <label for="comedy">קומדיה</label><br>
+    
+    <input type="radio" name="genre" id="scifi" value="scifi">
+    <label for="scifi">מדע בדיוני</label><br>
+    
+    <input type="radio" name="genre" id="reality" value="reality">
+    <label for="reality">ריאליטי</label><br>
+    
+    <input type="submit" value="הצביעו">
+</form>
+</div>
+
+<div id="feature">
+    <h2>תוכנית מובילה: תעלומות אפלות</h2>
+    <img src="" alt="תעלומות אפלות" />
+    <p>הצטרפו לבלשית שרה שחור בעודה פותרת את המקרים המסתוריים ביותר בעיר. בכל יום רביעי ב-21:00, צללו לעולם של מתח ותעלומה.</p>
+    <p><a href="#" class="watch-now">צפו עכשיו</a></p>
+</div>
+
+            <div class="clear"></div>
+        </div>
+        
+            <div id="footer">
+     ערוץ אפס. כל הזכויות שמורות.
+</div>
+    </div>
+            
+    </div>
+    <script type="text/javascript">
+        // Simple news ticker script
+        var tickerContent = document.getElementById('ticker-content');
+        var news = [
+            "העונה החדשה של 'מרגלי סייבר' מתחילה בשבוע הבא! אל תחמיצו!",
+            "פרק הסיום של 'תעלומות אפלות': מיהו הרוצח המסתורי?",
+            "תוכנית הלילה מארחת כוכב ידוע ביום חמישי הבא",
+            "תוכנית הריאליטי 'שפים קיצוניים' מתחילה בליהוק לעונה חדשה"
+        ];
+        var currentNews = 0;
+        function rotateTicker() {
+            var current = tickerContent.querySelector('p:not(.hidden)');
+            var next = current.nextElementSibling || tickerContent.querySelector('p:first-child');
+            
+            current.classList.add('hidden');
+            current.style.opacity = 0;
+            
+            next.classList.remove('hidden');
+            next.style.opacity = 1;
+        }
+
+        // Initialize ticker content
+        news.forEach(function(item, index) {
+            var p = document.createElement('p');
+            p.textContent = item;
+            p.style.opacity = index === 0 ? 1 : 0;
+            p.classList.toggle('hidden', index !== 0);
+            tickerContent.appendChild(p);
+        });
+
+        setInterval(rotateTicker, 5000);
+    </script>
+</body>
+</html>
